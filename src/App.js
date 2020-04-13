@@ -47,13 +47,12 @@ export default function App() {
           renderItem={({ item: repository }) => (
             <View key={repository.id} style={styles.repositoryContainer}>
               <Text style={styles.repository}>{repository.title}</Text>
+              <View>
+                <Text style={styles.url}>{repository.url}</Text>
+              </View>
 
               <View style={styles.techsContainer}>
-                {repository.techs.map((tech) => (
-                  <Text key={tech} style={styles.tech}>
-                    {tech}
-                  </Text>
-                ))}
+                <Text>{repository.techs}</Text>
               </View>
 
               <View style={styles.likesContainer}>
@@ -98,6 +97,10 @@ const styles = StyleSheet.create({
   techsContainer: {
     flexDirection: "row",
     marginTop: 10,
+  },
+  url: {
+    fontSize: 10,
+    marginTop: 10
   },
   tech: {
     fontSize: 12,
